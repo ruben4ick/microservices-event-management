@@ -5,4 +5,3 @@
 ![Event](docs/module-event-Event_Management.png)
 ![Ticket](docs/module-ticket-Ticket_Management.png)
 ![User](docs/module-user-User_Management.png)
-![Shared](docs/module-shared-Shared_Components.png)
