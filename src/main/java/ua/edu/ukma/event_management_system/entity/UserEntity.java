@@ -1,7 +1,7 @@
 package ua.edu.ukma.event_management_system.entity;
 
 import jakarta.persistence.*;
-import ua.edu.ukma.event_management_system.domain.UserRole;
+import ua.edu.ukma.event_management_system.user.internal.UserRole;
 
 import java.time.LocalDate;
 import java.util.List;
