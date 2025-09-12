@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
-import ua.edu.ukma.event_management_system.shared.api.UserDto;
+import ua.edu.ukma.event_management_system.user.internal.UserDto;
 import ua.edu.ukma.event_management_system.user.UserManagement;
 import ua.edu.ukma.event_management_system.user.internal.UserRole;
 

@@ -1,9 +1,8 @@
-package ua.edu.ukma.event_management_system.shared.api;
+package ua.edu.ukma.event_management_system.user.internal;
 
 import jakarta.validation.constraints.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ua.edu.ukma.event_management_system.user.internal.UserRole;
 
 import java.time.LocalDate;
 

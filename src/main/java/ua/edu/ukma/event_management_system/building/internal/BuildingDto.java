@@ -1,4 +1,4 @@
-package ua.edu.ukma.event_management_system.shared.api;
+package ua.edu.ukma.event_management_system.building.internal;
 
 import jakarta.validation.constraints.*;
 import lombok.Data;
