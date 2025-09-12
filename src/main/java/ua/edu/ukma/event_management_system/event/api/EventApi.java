@@ -1,6 +1,6 @@
 package ua.edu.ukma.event_management_system.event.api;
 
-import ua.edu.ukma.event_management_system.shared.api.EventDto;
+import ua.edu.ukma.event_management_system.event.internal.EventDto;
 import ua.edu.ukma.event_management_system.event.internal.Event;
 
 import java.time.LocalDateTime;

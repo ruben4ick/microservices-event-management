@@ -1,7 +1,6 @@
 package ua.edu.ukma.event_management_system.user.internal;
 
 import org.springframework.stereotype.Service;
-import ua.edu.ukma.event_management_system.shared.api.UserDto;
 
 /**
  * Simple user service for the User module.

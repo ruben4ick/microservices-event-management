@@ -1,6 +1,6 @@
 package ua.edu.ukma.event_management_system.user.api;
 
-import ua.edu.ukma.event_management_system.shared.api.UserDto;
+import ua.edu.ukma.event_management_system.user.internal.UserDto;
 import ua.edu.ukma.event_management_system.user.internal.User;
 
 import java.util.List;

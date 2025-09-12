@@ -1,6 +1,6 @@
 package ua.edu.ukma.event_management_system.building.api;
 
-import ua.edu.ukma.event_management_system.shared.api.BuildingDto;
+import ua.edu.ukma.event_management_system.building.internal.BuildingDto;
 import ua.edu.ukma.event_management_system.building.internal.Building;
 
 import java.util.List;

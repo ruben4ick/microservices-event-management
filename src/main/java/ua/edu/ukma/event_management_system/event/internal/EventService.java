@@ -1,9 +1,6 @@
 package ua.edu.ukma.event_management_system.event.internal;
 
 import org.springframework.stereotype.Service;
-import ua.edu.ukma.event_management_system.shared.api.EventDto;
-
-import java.time.LocalDateTime;
 
 /**
  * Simple event service for the Event module.

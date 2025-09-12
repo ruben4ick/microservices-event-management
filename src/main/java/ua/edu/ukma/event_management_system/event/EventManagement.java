@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ua.edu.ukma.event_management_system.shared.api.EventDto;
+import ua.edu.ukma.event_management_system.event.internal.EventDto;
 import ua.edu.ukma.event_management_system.event.internal.Event;
 import ua.edu.ukma.event_management_system.event.internal.EventService;
 

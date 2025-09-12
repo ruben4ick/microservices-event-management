@@ -1,6 +1,6 @@
 package ua.edu.ukma.event_management_system.ticket.api;
 
-import ua.edu.ukma.event_management_system.shared.api.TicketDto;
+import ua.edu.ukma.event_management_system.ticket.internal.TicketDto;
 import ua.edu.ukma.event_management_system.ticket.internal.Ticket;
 
 import java.util.List;
