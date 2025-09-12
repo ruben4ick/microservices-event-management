@@ -5,9 +5,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.modulith.ApplicationModule;
 import ua.edu.ukma.event_management_system.service.DatabasePopulatorService;
 
 @SpringBootApplication
+@ApplicationModule
 public class EventManagementSystemApplication implements CommandLineRunner {
 
 	private final DatabasePopulatorService databasePopulatorService;

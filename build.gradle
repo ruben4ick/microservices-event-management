@@ -32,6 +32,9 @@ dependencies {
 	implementation 'io.jsonwebtoken:jjwt-api:0.12.6' // JWT dependency
 	implementation 'org.springframework.boot:spring-boot-starter-aop:3.3.5'
 	implementation 'org.springframework.boot:spring-boot-starter-cache:3.3.5'
+	implementation "org.springframework.modulith:spring-modulith-starter-core:1.2.4"
+    implementation "org.springframework.modulith:spring-modulith-starter-jpa:1.2.4"  
+
 
 	runtimeOnly 'com.h2database:h2:2.3.232'
 	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.6' // JWT dependency
@@ -47,6 +50,7 @@ dependencies {
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test:3.4.0'
 	testImplementation 'org.springframework.security:spring-security-test:6.3.4'
+	testImplementation 'org.springframework.modulith:spring-modulith-starter-test:1.2.4'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
 }
@@ -66,7 +70,7 @@ tasks.register('generateAPIFile') {
 
 tasks.named('test') {
 	useJUnitPlatform()
-	enabled = false
+	enabled = true
 }
 
 tasks.withType(JavaCompile) {
