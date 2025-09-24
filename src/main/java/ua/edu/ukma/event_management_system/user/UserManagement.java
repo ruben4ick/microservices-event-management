@@ -9,9 +9,6 @@ import ua.edu.ukma.event_management_system.user.internal.UserDto;
 import ua.edu.ukma.event_management_system.user.internal.User;
 import ua.edu.ukma.event_management_system.user.internal.UserService;
 
-/**
- * User management service that publishes domain events.
- */
 @Service
 @RequiredArgsConstructor
 public class UserManagement {

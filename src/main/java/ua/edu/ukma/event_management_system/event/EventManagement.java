@@ -20,7 +20,6 @@ public class EventManagement {
     public Event createEvent(EventDto eventDto) {
         Event event = eventService.createEvent(eventDto);
         
-        // Publish domain event
         events.publishEvent(new EventCreated(
             (long) event.getId(), 
             event.getEventTitle(), 
