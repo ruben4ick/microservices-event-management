@@ -9,9 +9,6 @@ import ua.edu.ukma.event_management_system.event.internal.EventDto;
 import ua.edu.ukma.event_management_system.event.internal.Event;
 import ua.edu.ukma.event_management_system.event.internal.EventService;
 
-/**
- * Event management service that publishes domain events.
- */
 @Service
 @RequiredArgsConstructor
 public class EventManagement {

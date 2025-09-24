@@ -7,9 +7,6 @@ import org.springframework.modulith.events.ApplicationModuleListener;
 import org.springframework.stereotype.Service;
 import ua.edu.ukma.event_management_system.event.EventCreated;
 
-/**
- * Event listener for Ticket module that handles events from other modules.
- */
 @Service
 @RequiredArgsConstructor
 class TicketEventListener {

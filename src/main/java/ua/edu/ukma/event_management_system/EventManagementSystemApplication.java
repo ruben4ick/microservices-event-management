@@ -5,10 +5,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.modulith.ApplicationModule;
 
 @SpringBootApplication
-@ApplicationModule
 public class EventManagementSystemApplication implements CommandLineRunner {
 
 	private static final Logger log = LoggerFactory.getLogger(EventManagementSystemApplication.class);
