@@ -1,13 +1,20 @@
 /**
- * Ticket module - manages ticket sales and reservations.
+ * Ticket module - manages ticket sales, reservations, and validation.
  * 
  * This module provides:
- * - Ticket purchase and reservation
- * - Ticket validation
+ * - Ticket purchase and reservation functionality
+ * - Ticket validation and verification
  * - Ticket management for events
+ * - Integration with payment systems
+ * 
+ * Dependencies:
+ * - event: Event information for ticket association
+ * - user: User information for ticket ownership
  */
-@org.springframework.modulith.ApplicationModule(
+@ApplicationModule(
     displayName = "Ticket Management",
-    allowedDependencies = {"shared", "event", "user"}
+    allowedDependencies = {"event", "user"}
 )
 package ua.edu.ukma.event_management_system.ticket;
+
+import org.springframework.modulith.ApplicationModule;

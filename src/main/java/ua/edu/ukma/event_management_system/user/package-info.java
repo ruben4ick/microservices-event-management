@@ -7,8 +7,9 @@
  * - User profile management
  * - Role-based access control
  */
-@org.springframework.modulith.ApplicationModule(
-    displayName = "User Management",
-    allowedDependencies = {"shared"}
+@ApplicationModule(
+    displayName = "User Management"
 )
 package ua.edu.ukma.event_management_system.user;
+
+import org.springframework.modulith.ApplicationModule;

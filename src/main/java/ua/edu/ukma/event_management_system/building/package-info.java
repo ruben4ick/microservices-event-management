@@ -6,8 +6,9 @@
  * - Building rating system
  * - Building search and filtering
  */
-@org.springframework.modulith.ApplicationModule(
-    displayName = "Building Management",
-    allowedDependencies = {"shared"}
+@ApplicationModule(
+    displayName = "Building Management"
 )
 package ua.edu.ukma.event_management_system.building;
+
+import org.springframework.modulith.ApplicationModule;

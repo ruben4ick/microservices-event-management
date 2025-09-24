@@ -7,8 +7,10 @@
  * - Event rating system
  * - Event search and filtering
  */
-@org.springframework.modulith.ApplicationModule(
+@ApplicationModule(
     displayName = "Event Management",
-    allowedDependencies = {"shared", "building", "user"}
+    allowedDependencies = {"building", "user"}
 )
 package ua.edu.ukma.event_management_system.event;
+
+import org.springframework.modulith.ApplicationModule;
