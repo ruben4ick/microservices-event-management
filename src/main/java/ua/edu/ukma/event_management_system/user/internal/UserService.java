@@ -2,16 +2,12 @@ package ua.edu.ukma.event_management_system.user.internal;
 
 import org.springframework.stereotype.Service;
 
-/**
- * Simple user service for the User module.
- */
 @Service
 public class UserService {
 
     public User createUser(UserDto userDto) {
-        // Simple implementation - just create a user object
         User user = new User();
-        user.setId(System.currentTimeMillis()); // Simple ID generation
+        user.setId(System.currentTimeMillis());
         user.setUsername(userDto.getUsername());
         user.setEmail(userDto.getEmail());
         user.setFirstName(userDto.getFirstName());
