@@ -38,6 +38,7 @@ dependencies {
 
 
     runtimeOnly 'com.h2database:h2:2.3.232'
+	runtimeOnly 'org.postgresql:postgresql'
 	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.6' // JWT dependency
 	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.6' // JWT dependency
 

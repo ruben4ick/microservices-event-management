@@ -1,20 +1,33 @@
 package ua.edu.ukma.event_management_system.user.internal;
 
+import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
+@RequiredArgsConstructor
 public class UserService {
 
-    public User createUser(UserDto userDto) {
-        User user = new User();
-        user.setId(System.currentTimeMillis());
-        user.setUsername(userDto.getUsername());
-        user.setEmail(userDto.getEmail());
-        user.setFirstName(userDto.getFirstName());
-        user.setLastName(userDto.getLastName());
-        user.setUserRole(userDto.getUserRole());
-        user.setDateOfBirth(userDto.getDateOfBirth());
-        
-        return user;
+    private final UserRepository userRepository;
+    private final ModelMapper mapper;
+
+    public List<UserDto> getAllUsers() {
+        return userRepository.findAll()
+                .stream()
+                .map(u -> mapper.map(u, UserDto.class))
+                .toList();
+    }
+
+    public UserDto createUser(UserDto dto) {
+        User user = mapper.map(dto, User.class);
+        return mapper.map(userRepository.save(user), UserDto.class);
+    }
+
+    public Optional<UserDto> getUser(Long id) {
+        return userRepository.findById(id)
+                .map(u -> mapper.map(u, UserDto.class));
     }
 }

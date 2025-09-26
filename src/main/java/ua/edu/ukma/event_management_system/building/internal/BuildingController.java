@@ -3,6 +3,8 @@ package ua.edu.ukma.event_management_system.building.internal;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import ua.edu.ukma.event_management_system.building.internal.service.BuildingRatingService;
+import ua.edu.ukma.event_management_system.building.internal.service.BuildingService;
 
 import java.util.List;
 
@@ -11,35 +13,35 @@ import java.util.List;
 @RequiredArgsConstructor
 public class BuildingController {
 
-    // TODO: Add BuildingManagement service when implemented
+    private final BuildingService buildingService;
+    private final BuildingRatingService ratingService;
 
     @GetMapping
-    public ResponseEntity<List<Building>> getAllBuildings() {
-        // TODO: Implement getAllBuildings
-        return ResponseEntity.ok(List.of());
+    public List<BuildingDto> getAllBuildings() {
+        return buildingService.getAllBuildings();
     }
 
     @GetMapping("/{buildingId}")
-    public ResponseEntity<Building> getBuildingById(@PathVariable Long buildingId) {
-        // TODO: Implement getBuildingById
-        return ResponseEntity.notFound().build();
+    public ResponseEntity<BuildingDto> getBuildingById(@PathVariable Long buildingId) {
+        return buildingService.getBuildingById(buildingId)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping
-    public ResponseEntity<Building> createBuilding(@RequestBody BuildingDto buildingDto) {
-        // TODO: Implement createBuilding
-        return ResponseEntity.status(501).build();
+    public ResponseEntity<BuildingDto> createBuilding(@RequestBody BuildingDto dto) {
+        return ResponseEntity.ok(buildingService.createBuilding(dto));
     }
 
     @PutMapping("/{buildingId}")
-    public ResponseEntity<Building> updateBuilding(@PathVariable Long buildingId, @RequestBody BuildingDto buildingDto) {
-        // TODO: Implement updateBuilding
-        return ResponseEntity.notFound().build();
+    public ResponseEntity<BuildingDto> updateBuilding(
+            @PathVariable Long buildingId, @RequestBody BuildingDto dto) {
+        return ResponseEntity.ok(buildingService.updateBuilding(buildingId, dto));
     }
 
     @DeleteMapping("/{buildingId}")
     public ResponseEntity<Void> deleteBuilding(@PathVariable Long buildingId) {
-        // TODO: Implement deleteBuilding
-        return ResponseEntity.status(501).build();
+        buildingService.deleteBuilding(buildingId);
+        return ResponseEntity.noContent().build();
     }
 }

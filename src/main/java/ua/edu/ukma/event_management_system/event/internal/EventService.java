@@ -20,7 +20,7 @@ public class EventService {
         
         Building building =
             new Building();
-        building.setId((int) eventDto.getBuilding());
+        building.setId(eventDto.getBuilding());
         event.setBuilding(building);
         
         User creator =

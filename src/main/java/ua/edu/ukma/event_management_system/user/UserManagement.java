@@ -17,8 +17,8 @@ public class UserManagement {
     private final @NonNull UserService userService;
 
     @Transactional
-    public User createUser(UserDto userDto) {
-        User user = userService.createUser(userDto);
+    public UserDto createUser(UserDto userDto) {
+        UserDto user = userService.createUser(userDto);
         
         events.publishEvent(new UserCreated(user.getId(), user.getUsername(), user.getEmail()));
         

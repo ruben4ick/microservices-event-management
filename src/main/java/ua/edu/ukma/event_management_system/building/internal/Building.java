@@ -1,22 +1,33 @@
 package ua.edu.ukma.event_management_system.building.internal;
 
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name = "buildings")
 @Data
 @NoArgsConstructor
 public class Building {
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(nullable = false)
     private String address;
+    @Column(nullable = false)
     private int hourlyRate;
+    @Column(nullable = false)
     private int areaM2;
+    @Column(nullable = false)
     private int capacity;
+    @Column(nullable = false)
     private String description;
-    private List<BuildingRating> rating;
+    @OneToMany(mappedBy = "building", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<BuildingRating> ratings = new ArrayList<>();
 
-    public Building(int id, String address, int hourlyRate, int areaM2, int capacity,
+    public Building(Long id, String address, int hourlyRate, int areaM2, int capacity,
                     String description) {
         this.id = id;
         this.address = address;
@@ -24,11 +35,11 @@ public class Building {
         this.areaM2 = areaM2;
         this.capacity = capacity;
         this.description = description;
-        this.rating = new ArrayList<>();
+        this.ratings = new ArrayList<>();
     }
 
-    public Building(int id, String address, int hourlyRate, int areaM2, int capacity, String description, List<BuildingRating> rating) {
+    public Building(Long id, String address, int hourlyRate, int areaM2, int capacity, String description, List<BuildingRating> rating) {
         this(id, address, hourlyRate, areaM2, capacity, description);
-        this.rating = rating;
+        this.ratings = ratings;
     }
 }
