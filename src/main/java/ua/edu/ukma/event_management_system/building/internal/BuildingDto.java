@@ -8,7 +8,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 public class BuildingDto {
-	private int id;
+	private Long id;
 	@NotBlank(message = "Address is required")
 	private String address;
 	@Min(value = 1, message = "Hourly rate is required and must be positive")
@@ -20,9 +20,9 @@ public class BuildingDto {
 	@Pattern(regexp = "^[A-Za-zА-Яа-я0-9 ,.:;-]+|^$", message = "Description contains invalid characters")
 	@Size(max = 500, message = "Description must be less than 500 characters long")
 	private String description;
-	private List<Long> rating;
+	private List<BuildingRatingDto> rating;
 
-	public BuildingDto(int id, String address, int hourlyRate, int areaM2, int capacity, String description) {
+	public BuildingDto(Long id, String address, int hourlyRate, int areaM2, int capacity, String description) {
 		this.id = id;
 		this.address = address;
 		this.hourlyRate = hourlyRate;
@@ -31,8 +31,8 @@ public class BuildingDto {
 		this.description = description;
 	}
 
-	public BuildingDto(int id, String address, int hourlyRate, int areaM2,
-					   int capacity, String description, List<Long> rating) {
+	public BuildingDto(Long id, String address, int hourlyRate, int areaM2,
+					   int capacity, String description, List<BuildingRatingDto> rating) {
 		this(id, address, hourlyRate, areaM2, capacity, description);
 		this.rating = rating;
 	}

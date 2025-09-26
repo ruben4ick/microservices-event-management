@@ -12,7 +12,7 @@ RUN ./gradlew dependencies --no-daemon || return 0
 
 COPY . .
 
-RUN ./gradlew clean bootJar --no-daemon
+RUN ./gradlew bootJar --no-daemon
 
 
 # 2. Run

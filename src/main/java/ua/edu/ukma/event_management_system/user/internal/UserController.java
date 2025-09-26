@@ -1,6 +1,7 @@
 package ua.edu.ukma.event_management_system.user.internal;
 
 import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ua.edu.ukma.event_management_system.user.UserManagement;
@@ -13,6 +14,7 @@ import java.util.List;
 public class UserController {
 
     private final UserManagement userManagement;
+    private final ModelMapper modelMapper;
 
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers() {
@@ -27,9 +29,9 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<User> createUser(@RequestBody UserDto userDto) {
+    public ResponseEntity<UserDto> createUser(@RequestBody UserDto userDto) {
         try {
-            User user = userManagement.createUser(userDto);
+            var user = userManagement.createUser(userDto);
             return ResponseEntity.ok(user);
         } catch (Exception e) {
             return ResponseEntity.badRequest().build();
