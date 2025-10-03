@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: eventpass
 
   app:
-    image: event-management:latest
+    image: foxxxxx333/event-management:latest
     ports:
       - "8080:8080"
     environment:

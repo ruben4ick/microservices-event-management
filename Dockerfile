@@ -6,20 +6,13 @@ WORKDIR /app
 COPY gradlew gradlew.bat ./
 COPY gradle ./gradle
 COPY build.gradle settings.gradle ./
-RUN chmod +x ./gradlew
 
+RUN chmod +x ./gradlew
 RUN ./gradlew dependencies --no-daemon || return 0
 
 COPY . .
-
 RUN ./gradlew bootJar --no-daemon
 
-
-# 2. Run
-FROM openjdk:21-jdk AS runtime
-
-WORKDIR /app
-
-COPY --from=builder /app/build/libs/*.jar app.jar
-
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# 2. Export
+FROM scratch AS export
+COPY --from=builder /app/build/libs/app.jar /
